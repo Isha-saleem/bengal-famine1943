@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Timeline - Echoes of the Forgotten</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #4a3f35;
+      --secondary: #c7b198;
+      --accent: #996633;
+      --light: #fdfaf6;
+      --text: #2b2b2b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--light);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin: 0;
+    }
+
+    nav {
+      background-color: var(--secondary);
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    h2 {
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .timeline-item {
+      background-color: white;
+      border-left: 5px solid var(--accent);
+      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 5px;
+      position: relative;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .timeline-item:hover {
+      transform: translateX(10px);
+    }
+
+    .timeline-item h3 {
+      margin-top: 0;
+      color: var(--accent);
+    }
+
+    .timeline-item img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    footer {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Timeline of the Bengal Famine</h1>
+  </header>  
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="stories.html">Stories</a>
+    <a href="causes.html">Causes</a>
+        <a href="references.html">References</a>
+    <a href="team.html">Team</a>    
+  </nav>  
+
+  <section>
+    <h2>Key Events</h2>
+
+    <div class="timeline-item">
+      <h3>Early 1943: Poor Harvest</h3>
+      <p>Unusually low rice production due to natural disasters like cyclones and flooding significantly reduced food availability in Bengal.</p>
+      <img src="bengalfamine2.jfif" alt="Cyclone Damage Bengal">
+    </div>  
+
+    <div class="timeline-item">
+      <h3>March 1943: Japanese Conquest of Burma</h3>
+      <p>With Burma falling to Japanese forces, Bengal's rice imports were halted, worsening the food crisis across the region.</p>
+      <img src="burma war.jfif" alt="Burma WWII Map">
+    </div>  
+
+    <div class="timeline-item">
+      <h3>Mid 1943: Grain Hoarding and Speculation</h3>
+      <p>Merchants and landlords began hoarding food and driving up prices. Black markets flourished while the poor went hungry.</p>
+      <img src="bengalfamine.jfif" alt="Famine market in Bengal">
+    </div>  
+
+    <div class="timeline-item">
+      <h3>October 1943: Peak Starvation</h3>
+      <p>The famine reached its peak with thousands dying daily. Calcutta streets were filled with the bodies of the starving.</p>
+      <img src="calcuttafamine.jfif" alt="Calcutta 1943 Famine">
+    </div>  
+
+    <div class="timeline-item">
+      <h3>1944: Relief Efforts Begin</h3>
+      <p>Government and charitable organizations began providing food and medical aid, slowly reducing the mortality rate.</p>
+      <img src="relie.jfif" alt="Relief center in Bengal">
+    </div>  
+
+  </section>  
+
+  <footer>
+    &copy; 2025 Echoes of the Forgotten. All rights reserved.
+  </footer>  
+</body>  
+
+
+
+
+
+
+
+</html>
+

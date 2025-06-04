@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stories - Echoes of the Forgotten</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary:#a94428; 
+      --secondary: #b8c5d6;
+     --accent:  #2b3a42;
+      --light: #fdf6ec;
+      --text: #1a1a1a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--light);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin: 0;
+    }
+
+    nav {
+      background-color: var(--secondary);
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    h2 {
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .story {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .story:hover {
+      transform: translateY(-5px);
+      background-color: #f1f1f1;
+    }
+
+    .story h3 {
+      margin-top: 0;
+      color: var(--accent);
+    }
+
+    .story img {
+      
+      border-radius: 10px;
+      margin-top: 1rem;
+    } 
+    footer {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Personal Stories from the Bengal Famine</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="stories.html">Stories</a>
+    <a href="causes.html">Causes</a>
+        <a href="references.html">References</a>
+    <a href="team.html">Team</a>
+  </nav>
+
+  <section>
+    <h2>Testimonies of Survival</h2>
+
+    <div class="story">
+      <h3>Sukumar's Journey</h3>
+      <p>Sukumar, a young boy from a small village near Midnapore, watched his family starve one by one. After his parents passed away, he walked barefoot to Calcutta in search of food. He was found unconscious near Howrah Bridge and taken to a relief camp, where he survived thanks to volunteers. His image, captured by a British journalist, became symbolic of the crisis.</p>
+      <img src="bengalfamine1.jfif" alt="Starving child during Bengal Famine">
+    </div>
+
+    <div class="story">
+      <h3>Meera's Fight for Dignity</h3>
+      <p>Meera Devi, a widow, faced eviction during the famine. With no family to support her, she turned to begging in the streets of Bengal. Despite the daily humiliation and danger, she kept a journal detailing her experiences. Decades later, her granddaughter published Meera’s writings, preserving the voice of women victims who were often forgotten.</p>
+      <img src="womenfamine.jfif" alt="Woman affected by famine">
+    </div>
+
+    <div class="story">
+      <h3>Dr. Sen's Relief Efforts</h3>
+      <p>Dr. Sen, a Calcutta-based physician, refused to flee the city during the famine. Despite limited supplies and danger of disease, he opened his doors to all, keeping handwritten records of every patient. These documents, now preserved in a Kolkata archive, offer crucial data about the medical conditions of famine victims.</p>
+      <img src="doctorfamine.jfif" alt="Doctor treating famine victims">
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Echoes of the Forgotten. All rights reserved.
+  </footer>
+</body>
+
+</html>
