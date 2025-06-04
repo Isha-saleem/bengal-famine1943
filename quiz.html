@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz - Echoes of the Forgotten</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #003d5b;
+      --secondary: #f4d58d;
+      --accent: #c1666b;
+      --light: #fff8f0;
+      --text: #1a1a1a;
+      --correct: #c6f6c6;
+      --wrong: #f9c0c0;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--light);
+      color: var(--text);
+    }
+
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    nav {
+      background-color: var(--secondary);
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: var(--primary);
+      font-size: 1.8rem;
+    }
+
+    .question {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      border-left: 5px solid transparent;
+      transition: background-color 0.3s ease;
+    }
+
+    .question.correct {
+      background-color: var(--correct);
+      border-left-color: green;
+    }
+
+    .question.wrong {
+      background-color: var(--wrong);
+      border-left-color: red;
+    }
+
+    .question.unanswered {
+      background-color: #eee;
+      border-left-color: gray;
+    }
+
+    .question p {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .options label {
+      display: block;
+      margin: 0.4rem 0;
+    }
+
+    button {
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    #result {
+      margin-top: 2rem;
+      font-size: 1.3rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    footer {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Quiz: Test Your Knowledge of the Bengal Famine</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="stories.html">Stories</a>
+    <a href="causes.html">Causes</a>
+    <a href="references.html">References</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="team.html">Team</a>
+  </nav>
+
+  <main>
+    <h2>Choose the best answer</h2>
+    <form id="quizForm">
+      <div id="questionsContainer"></div>
+      <button type="button" onclick="checkAnswers()">Submit</button>
+      <div id="result"></div>
+    </form>
+  </main>
+
+  <footer>
+    &copy; 2025 Echoes of the Forgotten. All rights reserved.
+  </footer>
+
+  <script>
+    const questions = [
+      {
+        q: "1. In which year did the Bengal Famine occur?",
+        options: ["1919", "1943", "1950"],
+        answer: "1943"
+      },
+      {
+        q: "2. What was one major cause of the famine?",
+        options: ["Floods", "British wartime policies", "Earthquakes"],
+        answer: "British wartime policies"
+      },
+      {
+        q: "3. How many people approximately died in the Bengal famine?",
+        options: ["1 million", "2–3 million", "10 million"],
+        answer: "2–3 million"
+      },
+      {
+        q: "4. Which Indian leader strongly criticized British handling of the famine?",
+        options: ["Jawaharlal Nehru", "Mahatma Gandhi", "Subhas Chandra Bose"],
+        answer: "Subhas Chandra Bose"
+      },
+      {
+        q: "5. What crop failure contributed to the famine?",
+        options: ["Tea", "Wheat", "Rice"],
+        answer: "Rice"
+      },
+      {
+        q: "6. What natural disaster worsened the situation in Bengal?",
+        options: ["Cyclone and flooding", "Earthquake", "Volcano eruption"],
+        answer: "Cyclone and flooding"
+      },
+      {
+        q: "7. How did the British respond to the crisis?",
+        options: ["Immediate food aid", "Exported rice", "Delayed response"],
+        answer: "Delayed response"
+      },
+      {
+        q: "8. Which industry profited during the famine while people starved?",
+        options: ["Textile", "Transportation", "Military supply and rice traders"],
+        answer: "Military supply and rice traders"
+      },
+      {
+        q: "9. What was the name of the British Prime Minister at the time?",
+        options: ["Winston Churchill", "Clement Attlee", "Neville Chamberlain"],
+        answer: "Winston Churchill"
+      },
+      {
+        q: "10. What long-term effect did the famine have?",
+        options: ["Boost in agriculture", "Rise in anti-colonial sentiment", "Stronger British rule"],
+        answer: "Rise in anti-colonial sentiment"
+      }
+    ];
+
+    const container = document.getElementById("questionsContainer");
+
+    questions.forEach((q, index) => {
+      const div = document.createElement("div");
+      div.classList.add("question");
+      div.id = `q${index}`;
+
+      const questionHTML = `<p>${q.q}</p>` + q.options.map(opt => `
+        <label><input type="radio" name="q${index}" value="${opt}"> ${opt}</label>
+      `).join('');
+
+      div.innerHTML = questionHTML;
+      container.appendChild(div);
+    });
+
+    function checkAnswers() {
+      let score = 0;
+      questions.forEach((q, index) => {
+        const selected = document.querySelector(`input[name="q${index}"]:checked`);
+        const questionDiv = document.getElementById(`q${index}`);
+        questionDiv.classList.remove("correct", "wrong", "unanswered");
+
+        if (!selected) {
+          questionDiv.classList.add("unanswered");
+        } else if (selected.value === q.answer) {
+          questionDiv.classList.add("correct");
+          score++;
+        } else {
+          questionDiv.classList.add("wrong");
+        }
+      });
+
+      document.getElementById("result").textContent = `You scored ${score} out of ${questions.length}`;
+    }
+  </script>
+</body>
+</html>
